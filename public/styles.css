@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    --color-letter: #018ce9;
+    --color-rocket: #7159c1;
+    --color-background: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    background: url(./classroom.jpg);
+    background-size: cover;
+    font-family: Roboto, sans-serif;
+    color: white;
+}
+
+header {
+    background-color: #1b6f1b;
+    width: 100%;
+    padding: 32px;  
+    box-sizing: border-box;  
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+    border-bottom: 7px solid #deb887;
+    text-align: center;
+}
+
+.links {
+    font-size: 22px;
+    line-height: 32px;       
+}
+
+.links a + a {    
+    margin-left: 32px;    
+}
+
+.links a {
+    color: white;     
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+    position: relative;
+}
+
+.links a.active {
+    font-weight: bold;
+    color: rgb(158, 158, 231);    
+}
+
+.links a:hover{
+    -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+    filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+}
+
+.links a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+}
+
+.links a:hover::after {
+    width: 100%;    
+    transition: width 0.3s ease-in-out;
+}
