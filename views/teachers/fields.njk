@@ -1,0 +1,86 @@
+<div class="item">
+    <div>Avatar URL</div>
+    <div>
+        <input 
+            type="url" 
+            name="avatar_url" 
+            placeholder="http://"
+            value="{{ teacher.avatar_url }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Complete Name</div>
+    <div>
+        <input 
+            type="text" 
+            name="name" 
+            placeholder="Write your complete name"
+            value="{{ teacher.name }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Birthdate</div>
+    <div>
+        <input 
+            type="date" 
+            name="birth"
+            value="{{ teacher.birth }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Degree Title</div>
+    <div>
+        <input 
+            type="text" 
+            name="degrees" 
+            placeholder="Write your Degree Title"
+            value="{{ teacher.degrees }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Type of Class</div>
+    <div>
+        <span>
+            <input 
+                type="radio" 
+                name="classes" 
+                value="person"
+                {% if teacher.classes == "person" %}
+                    checked
+                {% endif %}
+            >In-Person
+        </span>
+        <span>
+            <input 
+                type="radio" 
+                name="classes" 
+                value="online"
+                {% if teacher.classes == "online" %}
+                    checked
+                {% endif %}
+            >Online
+        </span>
+    </div>
+</div>
+
+<div class="item">
+    <div>Subjects</div>
+    <div>
+        <input 
+            type="text" 
+            name="subjects" 
+            placeholder="Write your Degree Title"
+            value="{{ teacher.subjects }}"
+        >
+    </div>
+</div>
+
+<button type="submit">Save</button>
