@@ -20,5 +20,16 @@ module.exports = {
 
         return `${year}-${month}-${day}`
         
-    }
+    },
+    graduation(degrees) {
+        if (degrees == "Secondary") {
+            return "Secondary school";
+        } else if (degrees == "Bachelor") {
+            return "Bachelor’s degree";
+        } else if (degrees == "Master") {
+            return "Master’s degree";
+        } else if (degrees == "Doctoral") {
+            return "Doctoral degree";
+        }
+    },
 }

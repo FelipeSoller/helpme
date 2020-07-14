@@ -6,9 +6,19 @@
       "name": "Felipe Soller",
       "birth": 531705600000,
       "degrees": "Master",
-      "classes": "online",
-      "subjects": "Math, English, History ",
-      "created_at": 1594011427942
+      "classes": "person",
+      "subjects": "Math ",
+      "created_at": 1594694349177
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://avatars0.githubusercontent.com/u/62728038?s=460&u=0901764d6f0e877dd57621cc0b6aa65d399a9ffb&v=4",
+      "name": "Felipe Soller",
+      "birth": 531705600000,
+      "degrees": "Doctoral",
+      "classes": "person",
+      "subjects": "Math ",
+      "created_at": 1594694859316
     }
   ]
 }

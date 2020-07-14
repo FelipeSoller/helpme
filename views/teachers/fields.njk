@@ -34,14 +34,14 @@
 </div>
 
 <div class="item">
-    <div>Degree Title</div>
+    <div>Education</div>
     <div>
-        <input 
-            type="text" 
-            name="degrees" 
-            placeholder="Write your Degree Title"
-            value="{{ teacher.degrees }}"
-        >
+        <select name="degrees">
+            <option value="Secondary" {% if teacher.degrees == "Secondary school" %} selected="selected" {% endif %}>Secondary school</option>
+            <option value="Bachelor" {% if teacher.degrees == "Bachelor’s degree" %} selected="selected" {% endif %}>Bachelor’s degree</option>
+            <option value="Master" {% if teacher.degrees == "Master’s degree" %} selected="selected" {% endif %}>Master’s degree</option>
+            <option value="Doctoral" {% if teacher.degrees == "Doctoral degree" %} selected="selected" {% endif %}>Doctoral degree</option>
+        </select>
     </div>
 </div>
 

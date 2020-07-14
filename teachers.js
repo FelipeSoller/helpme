@@ -1,6 +1,6 @@
 const fs = require('fs')
 const data = require("./data.json")
-const { age, date } = require("./utils")
+const { age, date, graduation } = require("./utils")
 const Intl =require('intl')
 
 exports.show = function(req, res) {
@@ -14,6 +14,7 @@ exports.show = function(req, res) {
     const teacher = {
         ...foundTeacher,
         age: age(foundTeacher.birth),
+        degrees: graduation(foundTeacher.degrees),
         subjects: foundTeacher.subjects.split(','),       
         created_at: new Intl.DateTimeFormat("pt-BR").format(foundTeacher.created_at)
     }
@@ -45,7 +46,7 @@ exports.post = function(req, res) {
         degrees, 
         classes, 
         subjects, 
-        created_at 
+        created_at        
     })
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
