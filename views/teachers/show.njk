@@ -40,7 +40,16 @@
                 <div>Registered in</div>
                 <div>{{ teacher.created_at }}</div>
             </div>
-            <a href="#" class="button">Edit</a>
+            <a href="/teachers/{{ teacher.id }}/edit" class="button">Edit</a>
+
+            <form id="form-delete" method="post" action="/teachers?_method=DELETE">
+                <input 
+                    type="hidden" 
+                    name="id" 
+                    value={{ teacher.id }}
+                >
+                <button type="submit">Delete</button>
+            </form>
         </section>
     </div>
 {% endblock content %}

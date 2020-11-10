@@ -41,6 +41,7 @@ exports.post = function(req, res) {
     });    
 }
 
+// Show
 exports.show = function(req, res) {
     const { id } = req.params 
 
@@ -63,17 +64,74 @@ exports.show = function(req, res) {
     return res.render("teachers/show", { teacher });
 }
 
+// Edit
 exports.edit = function(req, res) {
     const { id } = req.params 
 
-    const foundTeacher = data.teachers.find(function(teacher){
+    const foundTeacher = data.teachers.find(function(teacher) {
         return teacher.id == id
-    })
-    if (!foundTeacher) return res.send("Teacher not found")
+    });
+    
+    if (!foundTeacher) {
+        return res.send("Teacher not found");
+    } 
 
     const teacher = {
         ...foundTeacher,
-        birth: date(foundTeacher.birth)
+        birth: date(foundTeacher.birth),
+        degrees: graduation(foundTeacher.degrees)
     }   
     return res.render('teachers/edit', { teacher })
+}
+
+// Update
+exports.put = function(req, res) {
+    const { id } = req.body
+    let index = 0;
+
+    const foundTeacher = data.teachers.find(function(teacher, foundIndex) {
+        if (id == teacher.id) {
+            index = foundIndex;
+            return true
+        }
+    });
+
+    if (!foundTeacher) {
+        return res.send("Teacher not found!");
+    }
+
+    const teacher = {
+        ...foundTeacher,
+        ...req.body,
+        birth: Date.parse(req.body.birth)
+    }
+
+    data.teachers[index] = teacher
+
+    fs.writeFile('data.json', JSON.stringify(data, null, 2), function(err) {
+        if (err) {
+            return res.send("Write error!");
+        }
+
+        return res.redirect(`/teachers/${id}`);
+    })
+}
+
+// Delete 
+exports.delete = function(req, res) {
+    const { id } = req.body;
+
+    const filteredTeachers = data.teachers.filter(function(teacher) {
+        return teacher.id != id;
+    })
+
+    data.teachers = filteredTeachers;
+
+    fs.writeFile('data.json',JSON.stringify(data, null, 2), function(err) {
+        if (err) {
+            return res.send("Write file error!");
+        }
+
+        return res.redirect('/teachers');
+    });
 }

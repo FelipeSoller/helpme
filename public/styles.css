@@ -195,7 +195,7 @@ a.button {
     text-transform: uppercase;
     font-weight: bold;
     border-radius: 4px;
-    margin-top: 8px;
+    margin-top: 15px;
     width: 100%;
     cursor: pointer;
 }
@@ -207,6 +207,8 @@ a.button {
     text-decoration: none;    
 }
 
-.card .details .item:last-child {
-    border: none;
+#form-delete button[type="submit"] {    
+    background-color: lightcoral;    
+    font-size: 16px;
+    margin-bottom: 15px;  
 }

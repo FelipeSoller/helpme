@@ -1,7 +1,7 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-    <form class="card" method="post" action="/teachers">
+    <form class="card" method="post" action="/teachers?_method=PUT">
         <section 
             class="avatar" 
             style="background: url({{  teacher.avatar_url  }}) no-repeat center center / cover">
@@ -11,6 +11,12 @@
             <h3>Teacher's Edition</h3>    
 
             {% include "teachers/fields.njk" %}
+
+            <input 
+                type="hidden" 
+                name="id" 
+                value={{ teacher.id }}
+            >
 
         </section>
     </form>
