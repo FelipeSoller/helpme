@@ -157,7 +157,8 @@ header {
     font-size: 16px;
 }
 
-input {
+input,
+select {
     width: 100%;
     outline: none;
     color: white;
@@ -204,4 +205,8 @@ a.button {
     box-sizing: border-box;
     text-align: center;
     text-decoration: none;    
+}
+
+.card .details .item:last-child {
+    border: none;
 }

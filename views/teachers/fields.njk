@@ -23,7 +23,7 @@
 </div>
 
 <div class="item">
-    <div>Birthdate</div>
+    <div>Birthday</div>
     <div>
         <input 
             type="date" 
@@ -52,8 +52,8 @@
             <input 
                 type="radio" 
                 name="classes" 
-                value="person"
-                {% if teacher.classes == "person" %}
+                value="In-person"
+                {% if teacher.classes == "In-person" %}
                     checked
                 {% endif %}
             >In-Person
@@ -62,8 +62,8 @@
             <input 
                 type="radio" 
                 name="classes" 
-                value="online"
-                {% if teacher.classes == "online" %}
+                value="Online"
+                {% if teacher.classes == "Online" %}
                     checked
                 {% endif %}
             >Online
@@ -77,7 +77,7 @@
         <input 
             type="text" 
             name="subjects" 
-            placeholder="Write your Degree Title"
+            placeholder="Write the subjects you teach separated by commas"
             value="{{ teacher.subjects }}"
         >
     </div>
