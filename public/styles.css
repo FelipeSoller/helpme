@@ -212,3 +212,85 @@ a.button {
     font-size: 16px;
     margin-bottom: 15px;  
 }
+
+.table-container {
+    display: block;
+    padding: 18px;
+    box-sizing: border-box;
+}
+
+.table-container table {
+    border-spacing: 0;
+}
+
+.table-container thead tr th {
+    font-family: 'Patrick Hand SC', cursive;    
+    text-align: left;
+}
+
+td, th {
+    padding: 16px;
+    border-bottom: 3px solid rgba(104, 194, 187, 0.7);
+}
+
+th {
+    text-transform: uppercase;
+    color:  rgba(251, 255, 0, 0.7);
+    font-size: 24px;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr td:first-child {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    align-items: center;
+}
+
+tbody tr td:first-child span {
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 3px 1px 6px -4px black;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+tbody tr td {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+tbody tr td:nth-child(2) span {
+    padding: 8px 16px;
+    background-color: rgba(104, 194, 187, 0.4);
+    border-radius: 16px;
+    margin-right: 4px;
+    margin-top: 8px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+tbody tr td:last-child a {
+    padding: 8px 16px;
+    background-color: lightcoral;
+    color: white;
+    border-radius: 8px;
+    margin-right: 4px;
+    margin-top: 8px;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.table-container thead tr th:last-child,
+td:last-child {
+    text-align: center;
+}
+

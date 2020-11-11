@@ -1,46 +1,36 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-    <div class="card">
-        <section class="avatar" style="background: url(https://source.unsplash.com/collection/3785838/500x500) no-repeat center center / cover"></section>
-        <section class="details">
-        
-            <h3>Teacher's information</h3>
+    <div class="card table-container">
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>Teachers</th>
+                    <th>Subjects</th>
+                    <th>Option</th>
+                </tr>
+            </thead>
 
-            <div class="item">
-                <div>Complete Name</div>
-                <div>Guilherme Saraiva</div>
-            </div>
+            <tbody>
 
-            <div class="item">
-                <div>Age</div>
-                <div>34 anos</div>
-            </div>
+                {% for teacher in teachers %}
+                    <tr>
+                        <td>
+                            <span style="background-image: url({{  teacher.avatar_url  }})"></span>
+                            {{ teacher.name }}
+                        </td>
+                        <td>
+                            {% for subject in teacher.subjects.split(',') %}
+                                <span>{{ subject }}</span>
+                            {% endfor %}
+                        </td>
+                        <td>
+                            <a href="/teachers/{{ teacher.id }}">View</a>
+                        </td>
+                    </tr>
+                {% endfor %}
 
-            <div class="item">
-                <div>Degree Title</div>
-                <div>Bachelor's degree program in education</div>
-            </div>
-
-            <div class="item">
-                <div>Type of Class</div>
-                <div>In-person or online</div>
-            </div>
-
-            <div class="item">
-                <div>Subjects</div>
-                <div>
-                    <span>Conversation</span> 
-                    <span>Grammar</span>
-                    <span>Listening</span>
-                    <span>Writing</span>
-                </div>
-            </div>
-
-            <div class="item">
-                <div>Registered in</div>
-                <div>12/12/2000</div>
-            </div>
-        </section>
+            </tbody>
+        </table>
     </div>
 {% endblock content %}
