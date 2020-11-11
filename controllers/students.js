@@ -1,6 +1,6 @@
 const fs = require('fs');
 const data = require("../data.json");
-const { age, date, education } = require("../utils");
+const { date, education } = require("../utils");
 const Intl =require('intl');
 
 // Index
@@ -25,30 +25,29 @@ exports.create =  function(req, res) {
 }
 
 // Post
-exports.post = function(req, res) {
-    
+exports.post = function(req, res) {    
     const keys = Object.keys(req.body);
 
     for (key of keys) {
        if (req.body[key] == "") {
            return res.send("Please fill out all fields in the form!");
        } 
-    }
-
-    let {avatar_url, name, email, birth, grade, workload} = req.body;
+    }    
 
     birth = Date.parse(req.body.birth);
     const created_at = Date.now();
-    const id = Number(data.students.length + 1);   
+    
+    let id = 1;
+    const lastStudent = data.students[data.students.length - 1];
+
+    if (lastStudent) {
+        id = lastStudent.id + 1;
+    }
 
     data.students.push({
-        id,
-        avatar_url, 
-        name, 
-        email, 
-        birth, 
-        grade, 
-        workload,
+        id,       
+        ...req.body,        
+        birth,        
         created_at        
     });
 
@@ -75,7 +74,7 @@ exports.show = function(req, res) {
 
     const student = {
         ...foundStudent,
-        age: age(foundStudent.birth),
+        birth: date(foundStudent.birth).birthDay,
         grade: education(foundStudent.grade),
         created_at: new Intl.DateTimeFormat("pt-BR").format(foundStudent.created_at)
     }
@@ -97,7 +96,7 @@ exports.edit = function(req, res) {
 
     const student = {
         ...foundStudent,
-        birth: date(foundStudent.birth),
+        birth: date(foundStudent.birth).iso,
         grade: education(foundStudent.grade)        
     }   
     return res.render('students/edit', { student })
