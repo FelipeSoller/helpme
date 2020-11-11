@@ -32,4 +32,23 @@ module.exports = {
             return "Doctoral degree";
         }
     },
+    education(grade) {
+        if (grade == "5grade") {
+            return "Elementary School - 5th Grade";
+        } else if (grade == "6grade") {
+            return "Elementary School - 6th Grade";
+        } else if (grade == "7grade") {
+            return "Middle School - 7th Grade";
+        } else if (grade == "8grade") {
+            return "Middle School - 8th Grade";
+        } else if (grade == "freshman") {
+            return "High School - Freshman";
+        } else if (grade == "sophomore") {
+            return "High School - Sophomore";
+        } else if (grade == "junior") {
+            return "High School - Junior";
+        } else if (grade == "senior") {
+            return "High School - Senior";
+        } 
+    }
 }

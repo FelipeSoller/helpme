@@ -1,4 +1,36 @@
 {
+  "students": [
+    {
+      "id": 1,
+      "avatar_url": "https://avatars0.githubusercontent.com/u/62728038?s=460&u=0901764d6f0e877dd57621cc0b6aa65d399a9ffb&v=4",
+      "name": "Felipe Soller",
+      "email": "soller@outlook.com",
+      "birth": 531705600000,
+      "grade": "senior",
+      "workload": "60",
+      "created_at": 1605069904661
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://scontent.fsdu5-1.fna.fbcdn.net/v/t1.0-9/44662623_1927903113956787_18805716168998912_n.jpg?_nc_cat=108&ccb=2&_nc_sid=09cbfe&_nc_eui2=AeHjwiK-2ycXMFy9pHtMCv5LJjqfX5AyYQImOp9fkDJhAii_WOcs55UOE-RESfd7ipk&_nc_ohc=qRQwyA88oMoAX9N_8QU&_nc_ht=scontent.fsdu5-1.fna&oh=7ac3cac2a754d98ff52f2d42bdd1ec48&oe=5FCB1D04",
+      "name": "Thalita Lyrio",
+      "email": "thalitalyrio1@gmail.com",
+      "birth": 538099200000,
+      "grade": "freshman",
+      "workload": "40",
+      "created_at": 1605069940826
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://avatars0.githubusercontent.com/u/62728038?s=460&u=0901764d6f0e877dd57621cc0b6aa65d399a9ffb&v=4",
+      "name": "Felipe Soller Cruz de Souza",
+      "email": "soller@outlook.com",
+      "birth": 531705600000,
+      "grade": "6grade",
+      "workload": "40",
+      "created_at": 1605069996425
+    }
+  ],
   "teachers": [
     {
       "id": 1,

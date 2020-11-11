@@ -74,7 +74,7 @@ header {
 
 .card {
     background-color: #1b6f1b;
-    width: 900px;
+    width: 1000px;
     min-height: 400px;
     box-sizing: border-box;
     margin: 35px auto;
@@ -276,7 +276,8 @@ tbody tr td:nth-child(2) span {
     font-size: 16px;
 }
 
-tbody tr td:last-child a {
+tbody tr td:last-child a,
+.table-container > a {
     padding: 8px 16px;
     background-color: lightcoral;
     color: white;
@@ -289,8 +290,14 @@ tbody tr td:last-child a {
     font-size: 16px;
 }
 
+.table-container > a {
+    margin-bottom: 18px;
+}
+
 .table-container thead tr th:last-child,
 td:last-child {
     text-align: center;
 }
+
+
 
