@@ -1,4 +1,46 @@
 {
-  "students": [],
-  "teachers": []
+  "students": [
+    {
+      "id": 1,
+      "avatar_url": "https://images.unsplash.com/photo-1519419691348-3b3433c4c20e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+      "name": "Brooke Cagle",
+      "email": "bcagle@email.com",
+      "birth": 1039219200000,
+      "grade": "senior",
+      "workload": "60",
+      "created_at": 1605384189939
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://avatars0.githubusercontent.com/u/62728038?s=460&u=0901764d6f0e877dd57621cc0b6aa65d399a9ffb&v=4",
+      "name": "Felipe Soller",
+      "email": "soller@outlook.com",
+      "birth": 531705600000,
+      "grade": "senior",
+      "workload": "60",
+      "created_at": 1605384489203
+    }
+  ],
+  "teachers": [
+    {
+      "id": 2,
+      "avatar_url": "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+      "name": "Charles Etoroma",
+      "birth": 718675200000,
+      "degrees": "Master",
+      "classes": "In-person",
+      "subjects": "Math, Physics",
+      "created_at": 1605384083216
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://unsplash.com/photos/mEZ3PoFGs_k",
+      "name": "Jane Doe",
+      "birth": -30578688000000,
+      "degrees": "Master",
+      "classes": "In-person",
+      "subjects": "Biology, chemistry",
+      "created_at": 1605384638623
+    }
+  ]
 }
