@@ -1,0 +1,110 @@
+<div class="item">
+    <div>Avatar URL</div>
+    <div>
+        <input 
+            type="url" 
+            name="avatar_url" 
+            placeholder="http://"
+            value="{{ teacher.avatar_url }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Complete Name</div>
+    <div>
+        <input 
+            type="text" 
+            name="name" 
+            placeholder="Write your complete name"
+            value="{{ teacher.name }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Birthday</div>
+    <div>
+        <input 
+            type="date" 
+            name="birth"
+            value="{{ teacher.birth }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Education</div>
+    <div>
+        <select name="degrees">
+            <option 
+                value="Secondary" 
+                {% if teacher.degrees == "Secondary school" %} 
+                selected="selected" 
+                {% endif %}
+                >Secondary school
+            </option>
+            <option 
+                value="Bachelor" 
+                {% if teacher.degrees == "Bachelor’s degree" %} 
+                selected="selected" 
+                {% endif %}
+                >Bachelor’s degree
+            </option>
+            <option 
+                value="Master" 
+                {% if teacher.degrees == "Master’s degree" %} 
+                selected="selected" 
+                {% endif %}
+                >Master’s degree
+            </option>
+            <option 
+                value="Doctoral" 
+                {% if teacher.degrees == "Doctoral degree" %} 
+                selected="selected" 
+                {% endif %}
+                >Doctoral degree
+            </option>
+        </select>
+    </div>
+</div>
+
+<div class="item">
+    <div>Type of Class</div>
+    <div>
+        <span>
+            <input 
+                type="radio" 
+                name="classes" 
+                value="In-person"
+                {% if teacher.classes == "In-person" %}
+                    checked
+                {% endif %}
+            >In-Person
+        </span>
+        <span>
+            <input 
+                type="radio" 
+                name="classes" 
+                value="Online"
+                {% if teacher.classes == "Online" %}
+                    checked
+                {% endif %}
+            >Online
+        </span>
+    </div>
+</div>
+
+<div class="item">
+    <div>Subjects</div>
+    <div>
+        <input 
+            type="text" 
+            name="subjects" 
+            placeholder="Write the subjects you teach separated by commas"
+            value="{{ teacher.subjects }}"
+        >
+    </div>
+</div>
+
+<button type="submit">Save</button>

@@ -1,0 +1,50 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+    <div class="card table-container">
+        <a href="/students/create">Add New Student</a>
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>E-mail</th>
+                    <th>Education Stage</th>
+                    <th>Workload</th>
+                    <th>Option</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for student in students %}
+                    <tr>
+                        <td>
+                            <span style="background-image: url({{  student.avatar_url  }})"></span>
+                            {{ student.name }}
+                        </td>
+                        <td>
+                            {{ student.email }}
+                        </td>
+                        <td>
+                            {{ student.grade }}
+                        </td>
+
+                        <td>
+                            {{ student.workload }} Hours
+                        </td>
+
+                        <td>
+                            <a href="/students/{{ student.id }}">View</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+        <input 
+                type="hidden" 
+                name="id" 
+                value={{ student.id }}
+            >
+    </div>
+{% endblock content %}
