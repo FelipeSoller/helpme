@@ -19,18 +19,18 @@
 
             <div class="item">
                 <div>Degree Title</div>
-                <div>{{ teacher.degrees }}</div>
+                <div>{{ teacher.education_level }}</div>
             </div>
 
             <div class="item">
                 <div>Type of Class</div>
-                <div>{{ teacher.classes }}</div>
+                <div>{{ teacher.class_type }}</div>
             </div>
 
             <div class="item">
                 <div>Subject</div>
                 <div>
-                    {% for subject in teacher.subjects %}
+                    {% for subject in teacher.subjects_taught %}
                     <span>{{ subject }}</span> 
                     {% endfor %}
                 </div>

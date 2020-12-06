@@ -21,7 +21,7 @@
                             {{ teacher.name }}
                         </td>
                         <td>
-                            {% for subject in teacher.subjects.split(',') %}
+                            {% for subject in teacher.subjects_taught.split(',') %}
                                 <span>{{ subject }}</span>
                             {% endfor %}
                         </td>

@@ -27,8 +27,8 @@
     <div>
         <input 
             type="date" 
-            name="birth"
-            value="{{ teacher.birth }}"
+            name="birth_date"
+            value="{{ teacher.birth_date }}"
         >
     </div>
 </div>
@@ -36,31 +36,31 @@
 <div class="item">
     <div>Education</div>
     <div>
-        <select name="degrees">
+        <select name="education_level">
             <option 
                 value="Secondary" 
-                {% if teacher.degrees == "Secondary school" %} 
+                {% if teacher.education_level == "Secondary school" %} 
                 selected="selected" 
                 {% endif %}
                 >Secondary school
             </option>
             <option 
                 value="Bachelor" 
-                {% if teacher.degrees == "Bachelor’s degree" %} 
+                {% if teacher.education_level == "Bachelor’s degree" %} 
                 selected="selected" 
                 {% endif %}
                 >Bachelor’s degree
             </option>
             <option 
                 value="Master" 
-                {% if teacher.degrees == "Master’s degree" %} 
+                {% if teacher.education_level == "Master’s degree" %} 
                 selected="selected" 
                 {% endif %}
                 >Master’s degree
             </option>
             <option 
                 value="Doctoral" 
-                {% if teacher.degrees == "Doctoral degree" %} 
+                {% if teacher.education_level == "Doctoral degree" %} 
                 selected="selected" 
                 {% endif %}
                 >Doctoral degree
@@ -75,9 +75,9 @@
         <span>
             <input 
                 type="radio" 
-                name="classes" 
+                name="class_type" 
                 value="In-person"
-                {% if teacher.classes == "In-person" %}
+                {% if teacher.class_type == "In-person" %}
                     checked
                 {% endif %}
             >In-Person
@@ -85,9 +85,9 @@
         <span>
             <input 
                 type="radio" 
-                name="classes" 
+                name="class_type" 
                 value="Online"
-                {% if teacher.classes == "Online" %}
+                {% if teacher.class_type == "Online" %}
                     checked
                 {% endif %}
             >Online
@@ -100,9 +100,9 @@
     <div>
         <input 
             type="text" 
-            name="subjects" 
+            name="subjects_taught" 
             placeholder="Write the subjects you teach separated by commas"
-            value="{{ teacher.subjects }}"
+            value="{{ teacher.subjects_taught }}"
         >
     </div>
 </div>

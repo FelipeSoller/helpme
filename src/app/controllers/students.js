@@ -1,16 +1,20 @@
 const {
-    age,
     date,
-    graduation
+    education
 } = require("../../lib/utils");
-const Intl = require('intl');
+
+const Student = require("../models/student");
+
 
 module.exports = {
     index(req, res) {
-        return
+        Student.all(function(students) {
+
+            return res.render('students/index', { students });
+        });        
     },
     create(req, res) {
-        return
+        return res.render('students/create');
     },
     post(req, res) {
         const keys = Object.keys(req.body);
@@ -20,12 +24,31 @@ module.exports = {
                 return res.send("Please fill out all fields in the form!");
             }
         }
+
+        Student.create(req.body, function(student) {
+            return res.redirect(`/students/${student.id}`);
+        });
     },
     show(req, res) {
-        return
+        Student.find(req.params.id, function(student) {
+            if(!student) return res.send("Student not found!");
+
+            student.birth_date = date(student.birth_date).birthDay;
+            student.education_level = education(student.education_level);            
+            student.created_at = date(student.created_at).format;
+
+            return res.render("students/show", { student });
+        });
     },
     edit(req, res) {
-        return
+        Student.find(req.params.id, function(student) {
+            if(!student) return res.send("Student not found!");
+
+            student.birth_date = date(student.birth_date).iso;
+            student.education_level = education(student.education_level);             
+
+            return res.render("students/edit", { student });
+        });
     },
     put(req, res) {
         const keys = Object.keys(req.body);
@@ -35,8 +58,14 @@ module.exports = {
                 return res.send("Please fill out all fields in the form!");
             }
         }
+
+        Student.update(req.body, function() {
+            return res.redirect(`/students/${req.body.id}`);
+        });
     },
     delete(req, res) {
-        return
+        Student.delete(req.body.id, function() {
+            return res.redirect(`/students`);
+        });
     }
 }
