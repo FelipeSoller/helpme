@@ -2,12 +2,27 @@
 
 {% block content %}
     <div class="card table-container">
-        <a href="/teachers/create">Add New Teacher</a>
+
+        <div class="header">
+            <a class="button" href="/teachers/create">Add New Teacher</a>
+            <form action="/teachers" method="GET">
+                <input 
+                    type="text" 
+                    name="filter" 
+                    placeholder="Find by name or subjects"
+                    value={{filter}}
+                >
+                <button type="submit">Find</button>
+            </form>
+        </div>
+
+        
         <table width="100%">
             <thead>
                 <tr>
                     <th>Teacher Name</th>
                     <th>Subjects</th>
+                    <th>Students</th>
                     <th>Option</th>
                 </tr>
             </thead>
@@ -25,6 +40,7 @@
                                 <span>{{ subject }}</span>
                             {% endfor %}
                         </td>
+                        <td>{{ teacher.total_students }}</td>
                         <td>
                             <a href="/teachers/{{ teacher.id }}">View</a>
                         </td>

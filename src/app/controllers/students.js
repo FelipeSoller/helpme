@@ -5,7 +5,6 @@ const {
 
 const Student = require("../models/student");
 
-
 module.exports = {
     index(req, res) {
         Student.all(function(students) {
@@ -14,7 +13,9 @@ module.exports = {
         });        
     },
     create(req, res) {
-        return res.render('students/create');
+        Student.teachersSelectOptions(function(options) {
+            return res.render('students/create', { teacherOptions: options });
+        });       
     },
     post(req, res) {
         const keys = Object.keys(req.body);
@@ -45,9 +46,11 @@ module.exports = {
             if(!student) return res.send("Student not found!");
 
             student.birth_date = date(student.birth_date).iso;
-            student.education_level = education(student.education_level);             
-
-            return res.render("students/edit", { student });
+            student.education_level = education(student.education_level); 
+            
+            Student.teachersSelectOptions(function(options) {
+                return res.render('students/edit', { student, teacherOptions: options });
+            });
         });
     },
     put(req, res) {

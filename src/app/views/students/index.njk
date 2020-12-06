@@ -17,6 +17,7 @@
             <tbody>
 
                 {% for student in students %}
+                    {% set grade = student.education_level %}
                     <tr>
                         <td>
                             <span style="background-image: url({{  student.avatar_url  }})"></span>
@@ -26,7 +27,25 @@
                             {{ student.email }}
                         </td>
                         <td>
-                            {{ student.education_level }}
+                            {% switch grade %}
+                                {% case "5grade" %}
+                                    Elementary School - 5th Grade
+                                {% case "6grade" %}
+                                    Elementary School - 6th Grade
+                                {% case "7grade" %}
+                                    Middle School - 7th Grade
+                                {% case "8grade" %}
+                                    Middle School - 8th Grade
+                                {% case "freshman" %}
+                                    High School - Freshman
+                                {% case "sophomore" %}
+                                    High School - Sophomore
+                                {% case "junior" %}
+                                    High School - Junior
+                                {% case "senior" %}
+                                    High School - Senior
+                            {% endswitch %}
+                         
                         </td>
 
                         <td>
