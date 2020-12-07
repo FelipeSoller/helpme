@@ -2,7 +2,20 @@
 
 {% block content %}
     <div class="card table-container">
-        <a href="/students/create">Add New Student</a>
+        
+         <div class="header">
+            <a class="button" href="/students/create">Add New Student</a>
+            <form action="/students" method="GET">
+                <input 
+                    type="text" 
+                    name="filter" 
+                    placeholder="Find by name or email"
+                    value={{filter}}
+                >
+                <button type="submit">Find</button>
+            </form>
+        </div>
+
         <table width="100%">
             <thead>
                 <tr>
@@ -61,9 +74,17 @@
             </tbody>
         </table>
         <input 
-                type="hidden" 
-                name="id" 
-                value={{ student.id }}
-            >
+            type="hidden" 
+            name="id" 
+            value={{ student.id }}
+        >
+
+        <div 
+            class="pagination"
+            data-page={{pagination.page}}
+            data-total={{pagination.total}}
+            data-filter={{filter}}
+        
+        ></div>
     </div>
 {% endblock content %}
